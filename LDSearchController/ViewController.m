@@ -7,11 +7,12 @@
 //
 
 #import "ViewController.h"
-
+#import "LDSearchController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong)UITableView    *tableView;
 @property (nonatomic, strong)UISearchBar    *searchBar;
 @property (nonatomic, strong)NSMutableArray *dataArray;
+@property (nonatomic, strong)UISearchController *searchController;
 @end
 
 @implementation ViewController
@@ -20,9 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.titleView = self.searchBar;
+    //self.navigationItem.titleView = self.searchController.searchBar;
     [self.view addSubview:self.tableView];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -40,8 +41,9 @@
     return cell;
 }
 #pragma mark - SearchBar
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;{
-    
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    LDSearchController *vc = [[LDSearchController alloc] init];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 #pragma mark - Getters
 - (NSMutableArray *)dataArray{
@@ -72,5 +74,13 @@
         _searchBar.placeholder = @"搜索";
     }
     return _searchBar;
+}
+- (UISearchController *)searchController{
+    if (!_searchController) {
+        _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+//_searchController.searchResultsUpdater = self;
+        //_searchController.definesPresentationContext = true;
+    }
+    return _searchController;
 }
 @end

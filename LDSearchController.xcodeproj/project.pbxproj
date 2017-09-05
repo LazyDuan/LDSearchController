@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132928D71F5EEAD6004550CF /* VSearchHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 132928D61F5EEAD6004550CF /* VSearchHistoryViewController.m */; };
+		132928DA1F5EF7DB004550CF /* LDSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 132928D91F5EF7DA004550CF /* LDSearchController.m */; };
 		163F92711F5EA56D0071861B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 163F92701F5EA56D0071861B /* main.m */; };
 		163F92741F5EA56D0071861B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 163F92731F5EA56D0071861B /* AppDelegate.m */; };
 		163F92771F5EA56D0071861B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 163F92761F5EA56D0071861B /* ViewController.m */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		132928D51F5EEAD6004550CF /* VSearchHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSearchHistoryViewController.h; sourceTree = "<group>"; };
+		132928D61F5EEAD6004550CF /* VSearchHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSearchHistoryViewController.m; sourceTree = "<group>"; };
+		132928D81F5EF7DA004550CF /* LDSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDSearchController.h; sourceTree = "<group>"; };
+		132928D91F5EF7DA004550CF /* LDSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDSearchController.m; sourceTree = "<group>"; };
 		163F926C1F5EA56D0071861B /* LDSearchController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDSearchController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163F92701F5EA56D0071861B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		163F92721F5EA56D0071861B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,6 +120,8 @@
 				163F927D1F5EA56D0071861B /* LaunchScreen.storyboard */,
 				163F92801F5EA56D0071861B /* Info.plist */,
 				163F926F1F5EA56D0071861B /* Supporting Files */,
+				132928D51F5EEAD6004550CF /* VSearchHistoryViewController.h */,
+				132928D61F5EEAD6004550CF /* VSearchHistoryViewController.m */,
 			);
 			path = LDSearchController;
 			sourceTree = "<group>";
@@ -149,6 +157,8 @@
 			children = (
 				163F92A31F5EA5BF0071861B /* LDSearchBar.h */,
 				163F92A41F5EA5BF0071861B /* LDSearchBar.m */,
+				132928D81F5EF7DA004550CF /* LDSearchController.h */,
+				132928D91F5EF7DA004550CF /* LDSearchController.m */,
 			);
 			path = LDSearchController;
 			sourceTree = "<group>";
@@ -290,8 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				163F92771F5EA56D0071861B /* ViewController.m in Sources */,
+				132928DA1F5EF7DB004550CF /* LDSearchController.m in Sources */,
 				163F92741F5EA56D0071861B /* AppDelegate.m in Sources */,
 				163F92711F5EA56D0071861B /* main.m in Sources */,
+				132928D71F5EEAD6004550CF /* VSearchHistoryViewController.m in Sources */,
 				163F92A51F5EA5BF0071861B /* LDSearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +544,7 @@
 				163F929B1F5EA56E0071861B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		163F929C1F5EA56E0071861B /* Build configuration list for PBXNativeTarget "LDSearchControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +553,7 @@
 				163F929E1F5EA56E0071861B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		163F929F1F5EA56E0071861B /* Build configuration list for PBXNativeTarget "LDSearchControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +562,7 @@
 				163F92A11F5EA56E0071861B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
