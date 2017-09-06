@@ -18,6 +18,8 @@
 		163F928A1F5EA56E0071861B /* LDSearchControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 163F92891F5EA56E0071861B /* LDSearchControllerTests.m */; };
 		163F92951F5EA56E0071861B /* LDSearchControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 163F92941F5EA56E0071861B /* LDSearchControllerUITests.m */; };
 		163F92A51F5EA5BF0071861B /* LDSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 163F92A41F5EA5BF0071861B /* LDSearchBar.m */; };
+		1642A8AB1F5F8C6A003F8074 /* LDTagFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1642A8AA1F5F8C6A003F8074 /* LDTagFlowLayout.m */; };
+		1642A8AE1F5F8C73003F8074 /* TagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1642A8AD1F5F8C73003F8074 /* TagCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,12 @@
 		163F92961F5EA56E0071861B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163F92A31F5EA5BF0071861B /* LDSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDSearchBar.h; sourceTree = "<group>"; };
 		163F92A41F5EA5BF0071861B /* LDSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDSearchBar.m; sourceTree = "<group>"; };
+		1642A8A71F5F8B01003F8074 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		1642A8A81F5F8B02003F8074 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1642A8A91F5F8C6A003F8074 /* LDTagFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTagFlowLayout.h; sourceTree = "<group>"; };
+		1642A8AA1F5F8C6A003F8074 /* LDTagFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTagFlowLayout.m; sourceTree = "<group>"; };
+		1642A8AC1F5F8C73003F8074 /* TagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagCell.h; sourceTree = "<group>"; };
+		1642A8AD1F5F8C73003F8074 /* TagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,10 @@
 		163F92A21F5EA5A50071861B /* LDSearchController */ = {
 			isa = PBXGroup;
 			children = (
+				1642A8AC1F5F8C73003F8074 /* TagCell.h */,
+				1642A8AD1F5F8C73003F8074 /* TagCell.m */,
+				1642A8A91F5F8C6A003F8074 /* LDTagFlowLayout.h */,
+				1642A8AA1F5F8C6A003F8074 /* LDTagFlowLayout.m */,
 				163F92A31F5EA5BF0071861B /* LDSearchBar.h */,
 				163F92A41F5EA5BF0071861B /* LDSearchBar.m */,
 				132928D81F5EF7DA004550CF /* LDSearchController.h */,
@@ -299,6 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1642A8AE1F5F8C73003F8074 /* TagCell.m in Sources */,
+				1642A8AB1F5F8C6A003F8074 /* LDTagFlowLayout.m in Sources */,
 				163F92771F5EA56D0071861B /* ViewController.m in Sources */,
 				132928DA1F5EF7DB004550CF /* LDSearchController.m in Sources */,
 				163F92741F5EA56D0071861B /* AppDelegate.m in Sources */,
@@ -344,6 +358,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				163F92791F5EA56D0071861B /* Base */,
+				1642A8A71F5F8B01003F8074 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -352,6 +367,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				163F927E1F5EA56D0071861B /* Base */,
+				1642A8A81F5F8B02003F8074 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -363,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -412,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
