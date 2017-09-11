@@ -7,10 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "LDSearchBar.h"
 #import "LDSearchController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong)UITableView    *tableView;
-@property (nonatomic, strong)UISearchBar    *searchBar;
+@property (nonatomic, strong)LDSearchBar    *searchBar;
 @property (nonatomic, strong)NSMutableArray *dataArray;
 @property (nonatomic, strong)UISearchController *searchController;
 @end
@@ -65,12 +66,11 @@
 }
 - (UISearchBar *)searchBar{
     if (!_searchBar) {
-        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
-        _searchBar.backgroundImage = [[UIImage alloc] init];
+        _searchBar = [[LDSearchBar alloc] initWithFrame:CGRectMake(0, 0, 300, 40)];
+        
         _searchBar.delegate = self;
-        _searchBar.barStyle = UIBarStyleBlack;
-        UITextField *searchField=[_searchBar valueForKey:@"_searchField"];
-        searchField.backgroundColor = [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
+        _searchBar.hasCentredPlaceholder = NO;
+        _searchBar.placeholderColor = [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:1];
         _searchBar.placeholder = @"搜索";
     }
     return _searchBar;

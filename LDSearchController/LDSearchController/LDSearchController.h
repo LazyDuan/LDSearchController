@@ -12,5 +12,4 @@
 /** 搜索栏 */
 @property (nonatomic, strong) UISearchBar *searchBar;
 
-@property (nonatomic, strong) NSArray *tagsArray;
 @end

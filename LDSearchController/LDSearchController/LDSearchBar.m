@@ -8,6 +8,9 @@
 
 #import "LDSearchBar.h"
 
+@interface LDSearchBar()
+@property (nonatomic, strong)UITextField *textField;
+@end
 @implementation LDSearchBar
 
 - (instancetype)initWithFrame:(CGRect)frame leftImage:(UIImage *)leftImage placeholderColor:(UIColor *)placeholderColor {
@@ -20,51 +23,19 @@
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    // 通过遍历self.subviews找到searchField
-    UITextField *searchField;
-    NSUInteger numViews = [self.subviews count];
-    for(int i = 0;i < numViews; i++) {
-        if([[self.subviews objectAtIndex:i] isKindOfClass:[UITextField class]]) {
-            searchField = [self.subviews objectAtIndex:i];
-        }
-    }
-    // 如果上述方法找不到searchField,试试下面的方法
-    if (searchField == nil) {
-        NSArray *arraySub = [self subviews];
-        UIView *viewSelf = [arraySub objectAtIndex:0];
-        NSArray *arrayView = [viewSelf subviews];
-        for(int i = 0;i < arrayView.count; i++) {
-            if([[arrayView objectAtIndex:i] isKindOfClass:[UITextField class]]) {
-                searchField = [arrayView objectAtIndex:i];
-            }
-        }
-    }
-    if (searchField) {
-        [searchField setBorderStyle:UITextBorderStyleNone];
-        //placeHolder颜色
-        [searchField setValue:_placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
-        searchField.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-        searchField.textColor = _textColor;
-        
-        //字体大小
-        [searchField setValue:_placeHolderFont forKeyPath:@"_placeholderLabel.font"];
-        searchField.font = _textFont;
-        
-        
-        UIImage *image = _leftImage;
-        UIImageView *leftImg = [[UIImageView alloc] initWithImage:image];
-        leftImg.frame = CGRectMake(0,0,image.size.width, image.size.height);
-        searchField.leftView = leftImg;
-    }
-    
-    //修改字体
-    
-}
-
-
 #pragma mark - Methods
+- (void)setLeftImage:(UIImage *)leftImage{
+    _leftImage = leftImage;
+    [self setImage:leftImage forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+}
+- (void)setInputBackgroundColor:(UIColor *)inputBackgroundColor{
+    _inputBackgroundColor = inputBackgroundColor;
+    self.textField.backgroundColor = inputBackgroundColor;
+}
+- (void)setPlaceholderColor:(UIColor *)placeholderColor{
+    _placeholderColor = placeholderColor;
+    self.textField.placeholder = placeholderColor;
+}
 
 - (void)setHasCentredPlaceholder:(BOOL)hasCentredPlaceholder {
     _hasCentredPlaceholder = hasCentredPlaceholder;
@@ -79,20 +50,20 @@
     }
 }
 
--(void)setIsHideClearButton:(BOOL)isHideClearButton
-{
+-(void)setIsHideClearButton:(BOOL)isHideClearButton{
     _isHideClearButton = isHideClearButton;
-    if (_isHideClearButton) {
-        for (UIView *view in self.subviews) {
-            if ([view isKindOfClass:NSClassFromString(@"UIView")] && view.subviews.count > 1) {
-                if ( [[view.subviews objectAtIndex:1] isKindOfClass:[UITextField class]]) {
-                    UITextField *textField = (UITextField *)[view.subviews objectAtIndex:1];
-                    [textField setClearButtonMode:UITextFieldViewModeNever];    // 不需要出现clearButton
-                }
-                break;
-            }
-        }
+    if (isHideClearButton) {
+        [self.textField setClearButtonMode:UITextFieldViewModeNever];
     }
+}
+#pragma mark - Getter
+- (UITextField *)textField{
+    if (!_textField) {
+        self.backgroundImage = [[UIImage alloc] init];
+        self.barStyle = UIBarStyleBlack;
+        _textField = [self valueForKey:@"_searchField"];
+    }
+    return _textField;
 }
 
 
